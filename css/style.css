@@ -237,6 +237,14 @@ img {
   color: gray;
 }
 
+.ans-sec{
+  padding: 50px;
+}
+
+.ans{
+  font-weight: 900;
+}
+
 #liked{
   display: none;
 }
