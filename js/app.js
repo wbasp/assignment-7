@@ -39,13 +39,11 @@ const switchTab = (id) => {
         document.getElementById( "liked" ).style.display = "block";
         document.getElementById( "posts" ).style.display = "none";
         document.getElementById( "reported" ).style.display = "none";
-
         displayLikedPosts();
     } else {
         document.getElementById( "reported" ).style.display = "block";
         document.getElementById( "posts" ).style.display = "none";
         document.getElementById( "liked" ).style.display = "none";
-
         displayReportedPosts();
     }
 };
@@ -144,6 +142,7 @@ const showPosts = (posts) => {
 
 const displayLikedPosts = () => {
     const likedPosts = getLikedPosts();
+    document.getElementById( "liked" ).innerHTML=``;
     likedPosts.forEach((post) => {
         const div = createPost(post);
         document.getElementById( "liked" ).appendChild(div);
@@ -162,7 +161,6 @@ const loadPosts = async () =>{
   let data = await fetch('https://raw.githubusercontent.com/ProgrammingHero1/insta-shohor/main/data/posts.json');
   posts = await data.json();
   showPosts(posts);
-  // console.log(posts);
 }
 
 loadPosts();
